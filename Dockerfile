@@ -31,7 +31,7 @@ RUN set -eux \
 # Get Adminer
 RUN set -eux \
 	&& URL="$( \
-		curl -sS --fail -k https://www.adminer.org/ \
+		curl -sS --fail -k https://www.adminer.org/en/ \
 		| grep -Eo 'https://github.com/vrana/adminer/releases/download/v[.0-9]+/adminer-[.0-9]+-mysql-en.php' \
 	)" \
 	&& curl -sS --fail -k -L "${URL}" > /adminer.php
