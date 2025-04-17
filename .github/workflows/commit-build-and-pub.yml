@@ -8,7 +8,6 @@ on:
 
 env:
   GHUSER: aracloud
-  GHTOKEN: ${{ secrets.GH_PAT }}
   ORG_NAME: aracloud
   IMG: dvwa-docker
 
@@ -22,6 +21,6 @@ jobs:
 
       - name: Login Build Push to ghcr.io
         run: |
-            docker login -u ${{ env.GHUSER }} --password ${{ env.GHTOKEN }} ghcr.io
+            docker login -u ${{ env.GHUSER }} --password ${{ secrets.GH_PAT }} ghcr.io
             docker build . --tag ghcr.io/${{ env.GHUSER }}/${{ env.IMG }}:latest
             docker push ghcr.io/${{ env.GHUSER }}/${{ env.IMG }}:latest
