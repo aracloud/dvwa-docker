@@ -9,7 +9,7 @@ env:
   GHTOKEN: ${{ secrets.GH_PAT }}
   ORG_NAME: aracloud
   IMG: dvwa-docker
-name: Build and Push DVWA Docker Image
+  name: Build and Push DVWA Docker Image
 
 on: 
   push:
